@@ -751,7 +751,7 @@ protected:
     /** The bounding sphere for this node. */
     mutable BoundingSphere _bounds;
     /** The dirty bits used for optimization. */
-    mutable int _dirtyBits;
+    mutable char _dirtyBits;
 };
 
 /**
