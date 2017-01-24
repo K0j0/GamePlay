@@ -1,5 +1,7 @@
 samples/NewGame
+myGames/
 
+*.db
 
 *.suo
 *.sdf
