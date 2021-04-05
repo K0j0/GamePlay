@@ -1,4 +1,7 @@
+.vs
 samples/NewGame
+myGames
+*.VC.db
 
 
 *.suo
