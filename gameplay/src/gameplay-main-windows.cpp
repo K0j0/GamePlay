@@ -10,6 +10,7 @@ using namespace gameplay;
     #include <windows.h>
 #endif
 
+#ifdef SUBSYSTEM_WINDOWS // Default linker option. Won't show a console however :-( This might've changed with a windows SDK update?
 /**
  * Main entry point.
  */
@@ -22,6 +23,18 @@ extern "C" int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LP
     delete platform;
     return result;
 }
+#else
+
+int main()
+{
+    Game* game = Game::getInstance();
+    Platform* platform = Platform::create(game);
+    GP_ASSERT(platform);
+    int result = platform->enterMessagePump();
+    delete platform;
+    return result;
+}
+#endif // SUBSYSTEM_WINDOWS
 
 #endif
 #endif
